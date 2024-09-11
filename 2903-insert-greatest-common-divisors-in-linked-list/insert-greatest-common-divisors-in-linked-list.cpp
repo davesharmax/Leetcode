@@ -21,17 +21,17 @@ public:
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
         ListNode* curr = head;
         while (curr != nullptr && curr->next != nullptr) {
-            // Calculate GCD between curr node and next node
+            
             int gcdValue = gcd(curr->val, curr->next->val);
             
-            // Create a new node with the GCD value
+           
             ListNode* newNode = new ListNode(gcdValue);
             
-            // Insert new node between curr and curr->next
+          
             newNode->next = curr->next;
             curr->next = newNode;
             
-            // Move curr pointer two steps forward
+            
             curr = newNode->next;
         }
         return head;
